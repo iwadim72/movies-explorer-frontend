@@ -1,0 +1,148 @@
+.auth {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.auth__container {
+    display: flex;
+    flex-direction: column;
+    width: 396px;
+    height: 560px;
+    margin: 0 auto 0;
+}
+
+@media screen and (max-width: 556px) {
+    .auth__container {
+        width: calc(100% - 60px);
+        height: 100vh;
+    }
+}
+
+.auth__logo {
+    width: 38px;
+    height: 38px;
+}
+
+@media screen and (max-width: 556px) {
+    .auth__logo {
+        margin: 56px auto 0
+    }
+}
+
+.auth__title {
+    margin: 40px 0;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+@media screen and (max-width: 556px) {
+    .auth__title {
+        margin: 50px auto 80px;
+    }
+}
+
+.auth__form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.auth__field {
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.auth__label {
+    color: #8B8B8B;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 10px;
+}
+
+.auth__input {
+    color: #FFF;
+    padding: 15px;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    border-radius: 8px;
+    background: #2F2F2F;
+    border: none;
+}
+
+
+.auth__input_error {
+    color: #EE3465;
+}
+
+.auth__input-error {
+    color: #EE3465;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    position: absolute;
+    top: 72px;
+}
+
+.auth__button {
+    width: 100%;
+    height: 46px;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    border-radius: 3px;
+    background: #4285F4;
+    border: none;
+    margin-bottom: 16px;
+}
+
+@media screen and (max-width: 556px) {
+    .auth__button {
+        font-size: 12px;
+    }
+}
+
+.auth__container-link {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    margin: 0 auto 0;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+@media screen and (max-width: 556px) {
+    .auth__container-link {
+        margin-bottom: 30px;
+        font-size: 12px;
+    }
+}
+
+.auth__link-text {
+    margin: 0 6px 0 0;
+}
+
+.auth__link-text {
+    color: #8B8B8B;
+}
+
+.auth__link {
+    color: #4285F4;
+    text-decoration: none;
+}

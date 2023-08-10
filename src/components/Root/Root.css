@@ -1,0 +1,14 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.root {
+    min-width: 300px;
+    min-height: 100vh;
+    background-color: #202020;
+    font-family: 'Inter', sans-serif;
+    color: #FFF;
+    display: flex;
+    flex-direction: column;
+    scroll-behavior: smooth;
+}
