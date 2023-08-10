@@ -13,6 +13,10 @@
     }
 }
 
+.header__link-logo {
+    width: 38px;
+    height: 38px;
+}
 
 .header_color_blue {
     background-color: #073042;

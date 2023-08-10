@@ -19,7 +19,7 @@ function Navigation() {
     return (
         <>
             <nav className={`navigation ${isOpenedMenu ? 'navigation_active' : ''}`}>
-                <button className="navigation__button-close" onClick={closeMenu}></button>
+                <button className="navigation__button-close button" onClick={closeMenu}></button>
                 <div className="navigation__container-link">
                     <Link to="/" replace className="navigation__link navigation__link_type_main link">Главная</Link>
                     <Link to="/movies" replace className={`navigation__link ${location.pathname === '/movies' ? 'navigation__link_active' : ''} link`}>Фильмы</Link>
@@ -34,7 +34,7 @@ function Navigation() {
                 </Link>
             </nav>
 
-            <button type="button" className="navigation__button-nav" onClick={openMenu}></button>
+            <button type="button" className="navigation__button-nav button" onClick={openMenu}></button>
             <div className={`navigation__overlay ${isOpenedMenu ? 'navigation__overlay_active' : ''}`} onClick={closeMenu}></div>
         </>
     )

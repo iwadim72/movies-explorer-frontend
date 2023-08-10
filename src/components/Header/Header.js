@@ -9,7 +9,7 @@ function Header() {
     /// В финальном приложении в лендинге будет показываться Navigate, на данный момент отсутствует переменная loggedIn
     return (
         <header className={`${location.pathname === '/' ? 'header_color_blue' : ''} header`}>
-            <img src={headerLogo} alt="Логотип проекта" className="header__logo" />
+            <Link to="/" className="link header__link-logo"><img src={headerLogo} alt="Логотип проекта" className="header__logo" /></Link>
             {location.pathname !== '/' ? <Navigation /> :
                 <div className="header__container">
                     <Link to="sign-up" replace className="header__link-register link">Регистрация</Link>

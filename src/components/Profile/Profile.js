@@ -18,7 +18,7 @@ function Profile() {
 
                 <div className="profile__field">
                     <label className="profile__label">Имя</label>
-                    <input type="text" className="profile__input" required minlength="2" maxlength="30" readOnly={!isEdit} placeholder="Введите имя:" value="Вадим" />
+                    <input type="text" className="profile__input" required minLength="2" maxLength="30" readOnly={!isEdit} placeholder="Введите имя:" value="Вадим" />
                 </div>
 
                 <div className="profile__border"></div>
