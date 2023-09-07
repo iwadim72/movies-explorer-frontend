@@ -21,8 +21,10 @@ export function useFormWithValidation() {
     const [values, setValues] = React.useState({});
     const [errors, setErrors] = React.useState({});
     const [isValid, setIsValid] = React.useState(false);
+    const [isChanged, setIsChanged] = React.useState(false);
 
     const handleChange = (event) => {
+        setIsChanged(true);
         const target = event.target;
         const name = target.name;
         const value = target.value;
@@ -40,5 +42,5 @@ export function useFormWithValidation() {
         [setValues, setErrors, setIsValid]
     );
 
-    return { values, handleChange, errors, isValid, resetForm };
+    return { values, handleChange, errors, isValid, resetForm, isChanged, setValues };
 }

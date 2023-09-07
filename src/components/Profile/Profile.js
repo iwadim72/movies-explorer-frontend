@@ -4,7 +4,7 @@ import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import { useFormWithValidation } from "../../hooks/useForm";
 
 function Profile(props) {
-    const { values, handleChange, errors, isValid } = useFormWithValidation();
+    const { values, handleChange, errors, isValid, setValues } = useFormWithValidation();
     const currentUser = React.useContext(CurrentUserContext);
     const [isEdit, setIsEdit] = useState(false);
     const isChanged = values.name !== currentUser.name || values.email !== currentUser.email;
@@ -21,6 +21,10 @@ function Profile(props) {
 
     React.useEffect(() => {
         props.resetMessage();
+        setValues({
+            email: currentUser.email,
+            name: currentUser.name
+        })
     }, [])
 
 
@@ -31,7 +35,7 @@ function Profile(props) {
 
                 <div className="profile__field">
                     <label className="profile__label">Имя</label>
-                    <input type="text" name="name" className="profile__input" required minLength="2" maxLength="30" readOnly={!isEdit} onChange={handleChange} placeholder="Введите имя:" value={values.name || (isEdit ? '' : currentUser.name)} />
+                    <input type="text" name="name" className="profile__input" required minLength="2" maxLength="30" readOnly={!isEdit} onChange={handleChange} placeholder="Введите имя:" value={values.name ? values.name : ''} />
                     <span className="profile__input-error">{errors.name}</span>
                 </div>
 
@@ -39,7 +43,7 @@ function Profile(props) {
 
                 <div className="profile__field">
                     <label className="profile__label">E-mail</label>
-                    <input type="email" name="email" pattern="^[a-zA-Z0-9+_.\\-]+@[a-zA-Z0-9]+\\.[a-zA-Z0-9]{2,4}$" className="profile__input" required value={values.email || (isEdit ? '' : currentUser.email)} onChange={handleChange} placeholder="Введите E-mail:" readOnly={!isEdit} />
+                    <input type="email" name="email" pattern="^[a-zA-Z0-9+_.\-]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]{2,4}$" className="profile__input" required value={values.email ? values.email : ''} onChange={handleChange} placeholder="Введите E-mail:" readOnly={!isEdit} />
                     <span className="profile__input-error">{errors.email}</span>
                 </div>
             </div>

@@ -1,9 +1,10 @@
 import React from "react";
 import FilterCheckbox from '../FilterCheckbox/FilterCheckbox';
-import { useForm } from '../../hooks/useForm';
+import { useFormWithValidation } from '../../hooks/useForm';
 
 function SearchForm(props) {
-    const { values, handleChange, isChanged } = useForm();
+    const { values, handleChange, isChanged, isValid, errors } = useFormWithValidation();
+    const disabled = !isValid;
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -21,7 +22,8 @@ function SearchForm(props) {
                         <input className="search__input" name="filmName" required placeholder="Фильм" value={values.filmName || (isChanged ? '' : (props.lastSearch === undefined ? '' : props.lastSearch))} onChange={handleChange}></input>
                     </label>
 
-                    <button type="submit" className="search__submit button"></button>
+                    <button type="submit" className="search__submit" disabled={disabled}></button>
+                    <span className="search__error">{errors.filmName ? 'Нужно ввести ключевое слово' : ''}</span>
                 </form>
 
                 <FilterCheckbox handleChangeCheckBox={props.handleChangeCheckBox} checkBoxChecked={props.checkBoxChecked} />
