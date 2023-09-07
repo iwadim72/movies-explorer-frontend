@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 
 function Navigation() {
     const location = useLocation();
+    const userWidth = window.innerWidth;
+
     const [isOpenedMenu, setIsOpenedMenu] = useState(false);
 
     function openMenu() {
@@ -27,14 +29,14 @@ function Navigation() {
                 </div>
 
                 <Link to="/profile" replace className="navigation__link navigation__link_type_profile link" >
-                    <div className="navigation__container-profile">
+                    <div className={`navigation__container-profile ${(location.pathname === '/') && (userWidth > 769) ? 'navigation__container-profile_blue' : ''}`}>
                         <p className="navigation__link-text">Аккаунт</p>
-                        <button type="button" className="navigation__button-profile"></button>
+                        <button type="button" className={`navigation__button-profile ${(location.pathname === '/') && (userWidth > 769) ? 'navigation__button-profile_blue' : ''} button`}></button>
                     </div>
                 </Link>
             </nav>
 
-            <button type="button" className="navigation__button-nav button" onClick={openMenu}></button>
+            <button type="button" className={`navigation__button-nav button ${location.pathname === '/' ? 'navigation__button-nav_green' : ''}`} onClick={openMenu}></button>
             <div className={`navigation__overlay ${isOpenedMenu ? 'navigation__overlay_active' : ''}`} onClick={closeMenu}></div>
         </>
     )

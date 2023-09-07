@@ -75,6 +75,10 @@
     background: #202020;
 }
 
+.navigation__container-profile_blue {
+    background: #073042;
+}
+
 
 @media screen and (max-width: 769px) {
     .navigation__container-link {
@@ -157,6 +161,10 @@
     background-size: 10px;
 }
 
+.navigation__button-profile_blue {
+    background-color: #073042;
+}
+
 .navigation__button-nav {
     width: 44px;
     height: 44px;
@@ -165,6 +173,10 @@
     display: none;
     background-image: url('../../images/icon__burger.svg');
     margin-right: 10px;
+}
+
+.navigation__button-nav_green {
+    background-color: #073042;
 }
 
 @media screen and (max-width: 769px) {
