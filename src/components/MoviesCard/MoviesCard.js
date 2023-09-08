@@ -64,11 +64,29 @@ function MoviesCard(props) {
 
     React.useEffect(() => {
         setIsLiked(card.isLiked);
-        const userWidth = window.innerWidth;
-        if (userWidth < 770) {
-            setIsActiveRemoveClass('card-movie__delete-button card-movie__delete-button_active button')
+
+        let userWidth = window.innerWidth;
+
+        function activateDeleteButtonMobile() {
+            if (userWidth < 767) {
+                setIsActiveRemoveClass('card-movie__delete-button card-movie__delete-button_active button')
+            } else { setIsActiveRemoveClass('card-movie__delete-button button') }
         }
 
+        activateDeleteButtonMobile()
+
+        function handleResize() {
+            setTimeout(() => {
+                userWidth = window.innerWidth;
+                activateDeleteButtonMobile();
+            }, 100);
+        }
+
+        window.addEventListener("resize", handleResize);
+
+        return function cleanup() {
+            window.removeEventListener("resize", handleResize);
+        }
     }, []);
 
     return (
