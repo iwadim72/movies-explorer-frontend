@@ -8,7 +8,7 @@ function MoviesCard(props) {
     const location = useLocation();
 
     const [isLiked, setIsLiked] = useState(false);
-    const [isActiveRemoveClass, setIsActiveRemoveClass] = useState('card-movie__delete-button button')
+    const [isActiveRemoveClass, setIsActiveRemoveClass] = useState('card-movie__delete-button button');
 
     function getDuration() {
         const durationHours = Math.floor(card.duration / 60);
@@ -64,6 +64,11 @@ function MoviesCard(props) {
 
     React.useEffect(() => {
         setIsLiked(card.isLiked);
+        const userWidth = window.innerWidth;
+        if (userWidth < 770) {
+            setIsActiveRemoveClass('card-movie__delete-button card-movie__delete-button_active button')
+        }
+
     }, []);
 
     return (
