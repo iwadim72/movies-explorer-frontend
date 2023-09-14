@@ -24,9 +24,19 @@
   transition: opacity 0.2s ease-in;
 }
 
+.button:disabled {
+  color: #C2C2C2;
+  background: #F8F8F8;
+}
+
 .button:hover {
   opacity: 0.8;
   cursor: pointer;
+}
+
+.button:disabled:hover {
+  opacity: 1;
+  cursor: auto;
 }
 
 .link {
